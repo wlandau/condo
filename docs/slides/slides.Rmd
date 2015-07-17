@@ -24,11 +24,11 @@ knitr::opts_knit$set(eval.after = 'fig.cap')
 - Install [Google Authenticator](http://hpcgroup.public.iastate.edu/HPC/Condo/IGA.html) on a mobile phone.
 - Follow the instructions in the setup email.
 
-## Configure
+## Setup instruction email
 
 ![](config.png)
 
-## Google Authenticator
+## Google Authenticator displays verification codes on your phone.
 
 ![](auth.jpg)
 
@@ -50,7 +50,7 @@ knitr::opts_knit$set(eval.after = 'fig.cap')
 - Cluster jobs with large data files: `/ptmp/<group>/<user>`
 
 
-## Get large data from `impact4`
+## Transfer large data {.build}
 
 - Log into the data transfer node and create you `ptmp` folder.
 
@@ -72,7 +72,7 @@ rsync -ae 'ssh -p 323' landau@impact4.stat.iastate.edu:example_data .
 scp -rP 323 landau@impact4.stat.iastate.edu:example_data .
 ```
 
-## Submit an R job on Condo.
+## Submit an R job on Condo.  {.build}
 
 - Log in and set up your work directory
 
@@ -82,7 +82,7 @@ mkdir /work/STAT/landau
 cd /work/STAT/landau
 ```
 
-- Create a script file (i.e., `example.script`) with shell commands to be executed on the cluster.
+- Create a `example.script` with shell commands to be executed on the cluster.
 - Submit the job with 
 
 ```
