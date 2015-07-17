@@ -91,9 +91,12 @@ qsub example.script
 
 - Check the job status with `qstat` or `qtop`.
 
-## Documentation and examples
+## Resources
 
-[https://github.com/wlandau/condo](https://github.com/wlandau/condo)
+- [hpc-help@iastate.edu](hpc-help@iastate.edu)
+- The [Rmpi](https://cran.r-project.org/web/packages/Rmpi/index.html) package
+- The [pbdR](http://r-pbd.org/) packages
+- [https://github.com/wlandau/condo](https://github.com/wlandau/condo)
 
 
 
