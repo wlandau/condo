@@ -1,0 +1,17 @@
+---
+title: "Rmarkdown slides"
+author: Will Landau
+date: 2015
+output: 
+  ioslides_presentation:
+    css: style.css
+    incremental: true
+    transition: faster
+---
+
+```{r, echo=FALSE}
+library(knitr)
+knitr::knit_hooks$set(inline = as.character)
+knitr::opts_chunk$set(cache=T, echo = F, fig.height = 5, results="hide", message=F, warning = F)
+knitr::opts_knit$set(eval.after = 'fig.cap')
+```
