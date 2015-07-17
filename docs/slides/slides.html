@@ -98,7 +98,7 @@
 
 </article></slide><slide class=''><hgroup><h2>Access</h2></hgroup><article  id="access">
 
-<ul>
+<ul class = 'build'>
 <li>Contact <a href='hpc-help@iastate.edu' title=''><a href='mailto:hpc-help@iastate.edu' title=''>hpc-help@iastate.edu</a></a> for an account.</li>
 <li>Install <a href='http://hpcgroup.public.iastate.edu/HPC/Condo/IGA.html' title=''>Google Authenticator</a> on a mobile phone.</li>
 <li>Follow the instructions in the setup email.</li>
@@ -114,10 +114,10 @@
 
 </article></slide><slide class=''><hgroup><h2>Login</h2></hgroup><article  id="login">
 
-<ul>
+<ul class = 'build'>
 <li>Log in to&#8230;
 
-<ul>
+<ul class = 'build'>
 <li>submit jobs: <code>ssh &lt;user&gt;@condo.its.iastate.edu</code></li>
 <li>transfer large data: <code>ssh &lt;user&gt;@condodtn.its.iastate.edu</code></li>
 </ul></li>
@@ -129,7 +129,7 @@
 
 </article></slide><slide class=''><hgroup><h2>Folders</h2></hgroup><article  id="folders">
 
-<ul>
+<ul class = 'build'>
 <li>Home directory for miscellaneous files: <code>/home/&lt;user&gt;</code></li>
 <li>Most cluster jobs: <code>/home/&lt;group&gt;/&lt;user&gt;</code></li>
 <li>Cluster jobs with large data files: <code>/ptmp/&lt;group&gt;/&lt;user&gt;</code></li>
@@ -137,7 +137,7 @@
 
 </article></slide><slide class=''><hgroup><h2>Get large data from <code>impact4</code></h2></hgroup><article  id="get-large-data-from-impact4">
 
-<ul>
+<ul class = 'build'>
 <li>Log into the data transfer node and create you <code>ptmp</code> folder.</li>
 </ul>
 
@@ -145,13 +145,13 @@
 mkdir /ptmp/STAT/landau
 cd /ptmp/STAT/landau</pre>
 
-<ul>
+<ul class = 'build'>
 <li>Use <code>rsync</code> to get some data.</li>
 </ul>
 
 <pre >rsync -ae &#39;ssh -p 323&#39; landau@impact4.stat.iastate.edu:example_data .</pre>
 
-<ul>
+<ul class = 'build'>
 <li><code>scp</code> is an alternative, but less preferred.</li>
 </ul>
 
@@ -159,13 +159,28 @@ cd /ptmp/STAT/landau</pre>
 
 </article></slide><slide class=''><hgroup><h2>Submit an R job on Condo.</h2></hgroup><article  id="submit-an-r-job-on-condo.">
 
-<ul>
+<ul class = 'build'>
 <li>Log in and set up your work directory</li>
 </ul>
 
 <pre >ssh condo.its.iastate.edu
 mkdir /work/STAT/landau
-cd /work/STAT/landau</pre></article></slide>
+cd /work/STAT/landau</pre>
+
+<ul class = 'build'>
+<li>Create a script file (i.e., <code>example.script</code>) with shell commands to be executed on the cluster.</li>
+<li>Submit the job with</li>
+</ul>
+
+<pre >qsub example.script</pre>
+
+<ul class = 'build'>
+<li>Check the job status with <code>qstat</code> or <code>qtop</code>.</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Documentation and examples</h2></hgroup><article  id="documentation-and-examples">
+
+<p><a href='https://github.com/wlandau/condo' title=''><a href='https://github.com/wlandau/condo' title=''>https://github.com/wlandau/condo</a></a></p></article></slide>
 
 
   <slide class="backdrop"></slide>

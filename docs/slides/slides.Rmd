@@ -5,7 +5,7 @@ date: 2015
 output: 
   ioslides_presentation:
     css: style.css
-    incremental: false
+    incremental: true
     transition: faster
 ---
 
@@ -82,11 +82,18 @@ mkdir /work/STAT/landau
 cd /work/STAT/landau
 ```
 
-- Create a `.script` file.
-- Submit the job with `qsub`
-- Check the job status with `qstat` or `qtop`.
-- Examples 
+- Create a script file (i.e., `example.script`) with shell commands to be executed on the cluster.
+- Submit the job with 
 
+```
+qsub example.script
+```
+
+- Check the job status with `qstat` or `qtop`.
+
+## Documentation and examples
+
+[https://github.com/wlandau/condo](https://github.com/wlandau/condo)
 
 
 
