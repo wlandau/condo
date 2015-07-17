@@ -1,4 +1,4 @@
 cd $PBS_O_WORKDIR # Otherwise, output is saved to your home directory.
 ulimit -s unlimited
-module add LAS/R/3.2.0
+module load LAS/R/3.2.0
 R CMD BATCH rjob.R
