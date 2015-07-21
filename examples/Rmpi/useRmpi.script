@@ -1,0 +1,4 @@
+#PBS -lnodes=2:ppn=16
+cd $PBS_O_WORKDIR # Otherwise, output is saved to your home directory.
+ulimit -s unlimited
+mpirun -np 1 -hostfile $PBS_NODEFILE /shared/software/LAS/R/3.2.0/bin/R --no-save CMD BATCH Rmpijob.R
