@@ -115,11 +115,11 @@
 </article></slide><slide class=''><hgroup><h2>Login</h2></hgroup><article  id="login">
 
 <ul class = 'build'>
-<li>Log in to&#8230;
+<li>Choose a login node.
 
 <ul class = 'build'>
-<li>submit jobs: <code>ssh &lt;user&gt;@condo.its.iastate.edu</code></li>
-<li>transfer large data: <code>ssh &lt;user&gt;@condodtn.its.iastate.edu</code></li>
+<li>headnode: <code>ssh &lt;user&gt;@condo.its.iastate.edu</code></li>
+<li>data transfer node: <code>ssh &lt;user&gt;@condodtn.its.iastate.edu</code></li>
 </ul></li>
 <li>Enter the verification code from Google Authenticator.</li>
 <li>Enter your password.</li>
@@ -142,17 +142,17 @@
 </ul>
 
 <pre >ssh condodtn.its.iastate.edu
-mkdir /ptmp/STAT/landau
-cd /ptmp/STAT/landau</pre>
+mkdir /ptmp/&lt;group&gt;/&lt;user&gt;
+cd /ptmp/&lt;group&gt;/&lt;user&gt;</pre>
 
 <ul class = 'build'>
-<li>Use <code>rsync</code> to get some data.</li>
+<li>Use <code>rsync</code> to get some data. For example,</li>
 </ul>
 
 <pre >rsync -ae &#39;ssh -p 323&#39; landau@impact4.stat.iastate.edu:example_data .</pre>
 
 <ul class = 'build'>
-<li><code>scp</code> is an alternative, but less preferred.</li>
+<li><code>scp</code> is an alternative, but less preferred. For example,</li>
 </ul>
 
 <pre >scp -rP 323 landau@impact4.stat.iastate.edu:example_data .</pre>
@@ -164,8 +164,8 @@ cd /ptmp/STAT/landau</pre>
 </ul>
 
 <pre >ssh condo.its.iastate.edu
-mkdir /work/STAT/landau
-cd /work/STAT/landau</pre>
+mkdir /work/&lt;group&gt;/&lt;user&gt;
+cd /work/&lt;group&gt;/&lt;user&gt;</pre>
 
 <ul class = 'build'>
 <li>Create a <code>example.script</code> with shell commands to be executed on the cluster.</li>
@@ -175,16 +175,29 @@ cd /work/STAT/landau</pre>
 <pre >qsub example.script</pre>
 
 <ul class = 'build'>
-<li>Check the job status with <code>qstat</code> or <code>qtop</code>.</li>
+<li>Check the job status with <code>qstat -u &lt;user&gt;</code> or <code>qtop</code>.</li>
+<li>If needed, delete the job with <code>qdel</code>.</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Resources</h2></hgroup><article  id="resources">
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Resources</h2></hgroup><article  id="resources">
+
+</article></slide><slide class=''><hgroup><h2>Condo</h2></hgroup><article  id="condo">
 
 <ul class = 'build'>
 <li><a href='hpc-help@iastate.edu' title=''><a href='mailto:hpc-help@iastate.edu' title=''>hpc-help@iastate.edu</a></a></li>
 <li>The <a href='https://cran.r-project.org/web/packages/Rmpi/index.html' title=''>Rmpi</a> package</li>
 <li>The <a href='http://r-pbd.org/' title=''>pbdR</a> packages</li>
-<li><a href='https://github.com/wlandau/condo' title=''><a href='https://github.com/wlandau/condo' title=''>https://github.com/wlandau/condo</a></a></li>
+<li><a href='https://github.com/wlandau/condo' title=''>slides and examples at wlandau/condo on GitHub</a></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Amazon Web Services: an alternative with virtual servers on the cloud</h2></hgroup><article  id="amazon-web-services-an-alternative-with-virtual-servers-on-the-cloud">
+
+<ul class = 'build'>
+<li><a href='https://aws.amazon.com/ec2/instance-types/' title=''>https://aws.amazon.com/ec2/instance-types/</a></li>
+<li><a href='https://aws.amazon.com/ec2/pricing/' title=''>https://aws.amazon.com/ec2/pricing/</a></li>
+<li><a href='https://aws.amazon.com/ebs/pricing/' title=''>https://aws.amazon.com/ebs/pricing/</a></li>
+<li><a href='https://aws.amazon.com/premiumsupport/' title=''>https://aws.amazon.com/premiumsupport/</a></li>
+<li><a href='http://aws.amazon.com/education/awseducate/' title=''>http://aws.amazon.com/education/awseducate/</a></li>
 </ul></article></slide>
 
 
