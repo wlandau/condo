@@ -5,7 +5,7 @@ date: 2015
 output: 
   ioslides_presentation:
     css: style.css
-    incremental: true
+    incremental: false
     transition: faster
 ---
 
@@ -50,7 +50,7 @@ knitr::opts_knit$set(eval.after = 'fig.cap')
 - Cluster jobs with large data files: `/ptmp/<group>/<user>`
 
 
-## Transfer large data {.build}
+## Transfer large data 
 
 - Log into the data transfer node and create you `ptmp` folder.
 
@@ -72,7 +72,7 @@ rsync -ae 'ssh -p 323' landau@impact4.stat.iastate.edu:example_data .
 scp -rP 323 landau@impact4.stat.iastate.edu:example_data .
 ```
 
-## Submit an R job on Condo.  {.build}
+## Submit an R job on Condo.  
 
 - Log in and set up your work directory
 
