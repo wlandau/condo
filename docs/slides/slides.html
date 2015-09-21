@@ -98,7 +98,7 @@
 
 </article></slide><slide class=''><hgroup><h2>Access</h2></hgroup><article  id="access">
 
-<ul>
+<ul class = 'build'>
 <li>Contact <a href='hpc-help@iastate.edu' title=''><a href='mailto:hpc-help@iastate.edu' title=''>hpc-help@iastate.edu</a></a> for an account.</li>
 <li>Install <a href='http://hpcgroup.public.iastate.edu/HPC/Condo/IGA.html' title=''>Google Authenticator</a> on a mobile phone.</li>
 <li>Follow the instructions in the setup email.</li>
@@ -114,10 +114,10 @@
 
 </article></slide><slide class=''><hgroup><h2>Login</h2></hgroup><article  id="login">
 
-<ul>
+<ul class = 'build'>
 <li>Choose a login node.
 
-<ul>
+<ul class = 'build'>
 <li>headnode: <code>ssh &lt;user&gt;@condo.its.iastate.edu</code></li>
 <li>data transfer node: <code>ssh &lt;user&gt;@condodtn.its.iastate.edu</code></li>
 </ul></li>
@@ -129,7 +129,7 @@
 
 </article></slide><slide class=''><hgroup><h2>Folders</h2></hgroup><article  id="folders">
 
-<ul>
+<ul class = 'build'>
 <li>Home directory for miscellaneous files: <code>/home/&lt;user&gt;</code></li>
 <li>Most cluster jobs: <code>/work/&lt;group&gt;/&lt;user&gt;</code></li>
 <li>Cluster jobs with large data files: <code>/ptmp/&lt;group&gt;/&lt;user&gt;</code></li>
@@ -137,7 +137,7 @@
 
 </article></slide><slide class=''><hgroup><h2>Transfer large data</h2></hgroup><article  id="transfer-large-data">
 
-<ul>
+<ul class = 'build'>
 <li>Log into the data transfer node and create you <code>ptmp</code> folder.</li>
 </ul>
 
@@ -145,21 +145,21 @@
 mkdir /ptmp/&lt;group&gt;/&lt;user&gt;
 cd /ptmp/&lt;group&gt;/&lt;user&gt;</pre>
 
-<ul>
+<ul class = 'build'>
 <li>Use <code>rsync</code> to get some data. For example,</li>
 </ul>
 
-<pre >rsync -ae &#39;ssh -p 323&#39; landau@impact4.stat.iastate.edu:example_data .</pre>
+<pre >rsync -ae &#39;ssh&#39; landau@impact4.stat.iastate.edu:example_data .</pre>
 
-<ul>
+<ul class = 'build'>
 <li><code>scp</code> is an alternative, but less preferred. For example,</li>
 </ul>
 
-<pre >scp -rP 323 landau@impact4.stat.iastate.edu:example_data .</pre>
+<pre >scp -r landau@impact4.stat.iastate.edu:example_data .</pre>
 
 </article></slide><slide class=''><hgroup><h2>Submit an R job on Condo.</h2></hgroup><article  id="submit-an-r-job-on-condo.">
 
-<ul>
+<ul class = 'build'>
 <li>Log in and set up your work directory</li>
 </ul>
 
@@ -167,37 +167,38 @@ cd /ptmp/&lt;group&gt;/&lt;user&gt;</pre>
 mkdir /work/&lt;group&gt;/&lt;user&gt;
 cd /work/&lt;group&gt;/&lt;user&gt;</pre>
 
-<ul>
+<ul class = 'build'>
 <li>Create a <code>example.script</code> with shell commands to be executed on the cluster.</li>
 <li>Submit the job with</li>
 </ul>
 
 <pre >qsub example.script</pre>
 
-<ul>
+<ul class = 'build'>
 <li>Check the job status with <code>qstat -u &lt;user&gt;</code> or <code>qtop</code>.</li>
 <li>If needed, delete the job with <code>qdel</code>.</li>
 </ul>
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Resources</h2></hgroup><article  id="resources">
 
-</article></slide><slide class=''><hgroup><h2>Condo</h2></hgroup><article  id="condo">
+</article></slide><slide class=''><hgroup><h2>Condo links</h2></hgroup><article  id="condo-links">
 
-<ul>
+<ul class = 'build'>
 <li><a href='hpc-help@iastate.edu' title=''><a href='mailto:hpc-help@iastate.edu' title=''>hpc-help@iastate.edu</a></a></li>
 <li>The <a href='https://cran.r-project.org/web/packages/Rmpi/index.html' title=''>Rmpi</a> package</li>
 <li>The <a href='http://r-pbd.org/' title=''>pbdR</a> packages</li>
 <li><a href='https://github.com/wlandau/condo' title=''>slides and examples at wlandau/condo on GitHub</a></li>
+<li>The HPC group maintains a <a href='http://hpcgroup.public.iastate.edu/HPC/hpc-class/hpc-class_script_writer.html' title=''>script writer</a> to help us prepare jobs.</li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Amazon Web Services: an alternative with virtual servers on the cloud</h2></hgroup><article  id="amazon-web-services-an-alternative-with-virtual-servers-on-the-cloud">
 
-<ul>
-<li><a href='http://aws.amazon.com/ec2/purchasing-options/spot-instances/' title=''>Spot instances: bid on surplus resources</a></li>
-<li><a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html/' title=''>Spot instance details</a></li>
+<ul class = 'build'>
 <li><a href='https://aws.amazon.com/ec2/instance-types/' title=''>instance types</a></li>
 <li><a href='https://aws.amazon.com/ec2/pricing/' title=''>instance pricing</a></li>
 <li><a href='https://aws.amazon.com/ebs/pricing/' title=''>storage pricing</a></li>
+<li><a href='http://aws.amazon.com/ec2/purchasing-options/spot-instances/' title=''>Spot instances: bid on surplus resources</a></li>
+<li><a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html/' title=''>Spot instance details</a></li>
 <li><a href='https://aws.amazon.com/premiumsupport/' title=''>tech support options</a></li>
 <li><a href='http://aws.amazon.com/education/awseducate/' title=''>free compute resources for academics (limited but renewable)</a></li>
 </ul></article></slide>
